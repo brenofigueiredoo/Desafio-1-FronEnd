@@ -144,6 +144,8 @@ export const ContainerInput = styled.div`
   }
 
   button {
+    width: 0;
+    height: 0;
     margin-top: 10px;
     background-color: transparent;
     border: transparent;
