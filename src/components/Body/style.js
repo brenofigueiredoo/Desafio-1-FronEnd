@@ -21,10 +21,10 @@ export const ContainerMain = styled.div`
       justify-content: center;
       padding-top: 38px;
 
-      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-      font-size: 20px;
-      color: gray;
-      font-weight: 700;
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 24px;
+      line-height: 28px;
+      color: #656565;
     }
   }
 
@@ -42,8 +42,11 @@ export const ContainerMain = styled.div`
     justify-content: center;
     width: 40%;
 
+    background: rgba(209, 220, 227, 0.18);
+    border-radius: 4px;
+
     h2 {
-      width: 110%;
+      width: 90%;
       border-bottom: 1px solid #1e90ff;
       color: #1e90ff;
       font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -79,13 +82,12 @@ export const BackBody = styled.div`
   width: 100vw;
   height: 100vh;
 
-  background-color: #f5f5f5;
+  background: rgba(209, 220, 227, 0.18);
 `;
 
 export const ContainerInput = styled.div`
   display: flex;
   flex-direction: column;
-  /* gap: 5px; */
 
   input {
     width: 200px;
@@ -102,16 +104,19 @@ export const ContainerInput = styled.div`
   label {
     padding-top: 12px;
     padding-bottom: 2px;
-    color: #808080;
-    font-family: "Roboto", sans-serif;
-    font-size: 13px;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    color: #656565;
   }
 
   p {
     padding-top: 3px;
-    font-family: "Roboto", sans-serif;
-    font-size: 9px;
-    color: #a9a9a9;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 11px;
+    line-height: 13px;
+
+    color: #cecece;
   }
 
   .pError {
@@ -123,5 +128,7 @@ export const ContainerInput = styled.div`
 
   button {
     margin-top: 10px;
+    background-color: transparent;
+    border: transparent;
   }
 `;
