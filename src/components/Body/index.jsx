@@ -18,7 +18,6 @@ const Body = () => {
       .catch((err) => console.log(err));
     }
 
-
     return (
         <BackBody>
         <ContainerMain>
@@ -28,18 +27,17 @@ const Body = () => {
                     <form id="myForm" onSubmit={handleSubmit(data => onSubmit(data))}>
                         <ContainerInput>
                             <label>Informe o valor da venda *</label>
-                            <input id="inputAmount" type="text" name="amount" {...register("amount")}/>
-                            {/* <p className="pError">{errors.amount?.message}</p> */}
+                            <input id="inputAmount" type="text" placeholder="R$" name="amount" {...register("amount")}/>
+                            <p className="pError">{errors.amount?.message}</p>
 
                             <label>Em quantas parcelas *</label>
                             <input id="inputInstallments" type="text" name="installments" {...register("installments")}/>
                             <p>"Máximo de 12 parcelas"</p>
-                            {console.log(errors)}
-                            {errors.installments && <p className="pError">{errors.installments?.message}</p>}
+                            <p className="pError">{errors.installments?.message}</p>
 
                             <label>Informe o percentual de MDR *</label>
                             <input id="inputMdr"type="text" name="mdr" {...register("mdr")}/>
-                            {/* <p className="pError">{errors.mdr?.message}</p> */}
+                            <p className="pError">{errors.mdr?.message}</p>
 
                             <button type="submit"></button>
                         </ContainerInput>
@@ -49,10 +47,10 @@ const Body = () => {
             <div className="containterResponseFull">
                 <div className="divResponse">
                     <h2 className="h2Response">VOCÊ RECEBERÁ:</h2>
-                    <h3 className="h3Response">Amanhã: <h3 className="h3RCivrão">&#160;R$ {calculation['1'] ? calculation['1'] : 0},00</h3></h3>
-                    <h3 className="h3Response">Em 15 dias: <h3 className="h3RCivrão">&#160;R$ {calculation['15'] ? calculation['15'] : 0},00</h3></h3>
-                    <h3 className="h3Response">Em 30 dias: <h3 className="h3RCivrão">&#160;R$ {calculation['30'] ? calculation['30'] : 0},00</h3></h3>
-                    <h3 className="h3Response">Em 90 dias: <h3 className="h3RCivrão">&#160;R$ {calculation['90'] ? calculation['90'] : 0},00</h3></h3>
+                    <h3 className="h3Response">Amanhã: <strong className="h3Strong">&#160; R$ {calculation['1'] ? calculation['1'] : 0},00</strong></h3>
+                    <h3 className="h3Response">Em 15 dias: <strong className="h3Strong">&#160; R$ {calculation['15'] ? calculation['15'] : 0},00</strong></h3>
+                    <h3 className="h3Response">Em 30 dias: <strong className="h3Strong">&#160; R$ {calculation['30'] ? calculation['30'] : 0},00</strong></h3>
+                    <h3 className="h3Response">Em 90 dias: <strong className="h3Strong">&#160; R$ {calculation['90'] ? calculation['90'] : 0},00</strong></h3>
                 </div>
             </div>
         </ContainerMain>

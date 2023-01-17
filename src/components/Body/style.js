@@ -3,11 +3,18 @@ import styled from "styled-components";
 export const ContainerMain = styled.div`
   display: flex;
   width: 34rem;
-  height: 20rem;
+  height: 22rem;
   margin: 0 auto;
 
   border: 2px solid #dcdcdc;
   border-radius: 5px;
+
+  @media screen and (max-width: 410px) {
+    flex-direction: column;
+    height: 32rem;
+    align-items: center;
+    justify-content: center;
+  }
 
   .divInfo {
     background-color: white;
@@ -15,6 +22,11 @@ export const ContainerMain = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    @media screen and (max-width: 410px) {
+      width: 100%;
+      height: 100%;
+    }
 
     h2 {
       display: flex;
@@ -45,6 +57,11 @@ export const ContainerMain = styled.div`
     background: rgba(209, 220, 227, 0.18);
     border-radius: 4px;
 
+    @media screen and (max-width: 410px) {
+      width: 100%;
+      height: 100%;
+    }
+
     h2 {
       width: 90%;
       border-bottom: 1px solid #1e90ff;
@@ -61,7 +78,7 @@ export const ContainerMain = styled.div`
       font-family: "Roboto", sans-serif;
     }
 
-    .h3RCivrão {
+    .h3Strong {
       color: #1e90ff;
       font-weight: 600;
       font-family: "Roboto", sans-serif;
