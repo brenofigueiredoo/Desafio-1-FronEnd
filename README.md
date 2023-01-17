@@ -1,6 +1,10 @@
-## Scripts Disponíveis
+# Scripts Disponíveis
 
-No diretório do projeto, você pode executar:
+### `yarn install`
+
+- Instala todas as dependencias da aplicação
+
+## No diretório do projeto, você pode executar:
 
 ### `yarn start`
 
