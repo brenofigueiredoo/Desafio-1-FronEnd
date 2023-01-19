@@ -9,7 +9,7 @@ export const ContainerMain = styled.div`
   border: 2px solid #dcdcdc;
   border-radius: 5px;
 
-  @media screen and (max-width: 410px) {
+  @media screen and (max-width: 440px) {
     flex-direction: column;
     height: 32rem;
     align-items: center;
@@ -23,7 +23,7 @@ export const ContainerMain = styled.div`
     flex-direction: column;
     gap: 20px;
 
-    @media screen and (max-width: 410px) {
+    @media screen and (max-width: 440px) {
       width: 100%;
       height: 100%;
     }
@@ -37,6 +37,10 @@ export const ContainerMain = styled.div`
       font-size: 24px;
       line-height: 28px;
       color: #656565;
+
+      @media screen and (max-width: 240px) {
+        font-size: 20px;
+      }
     }
   }
 
@@ -57,7 +61,7 @@ export const ContainerMain = styled.div`
     background: rgba(209, 220, 227, 0.18);
     border-radius: 4px;
 
-    @media screen and (max-width: 410px) {
+    @media screen and (max-width: 440px) {
       width: 100%;
       height: 100%;
     }
@@ -78,7 +82,7 @@ export const ContainerMain = styled.div`
       font-family: "Roboto", sans-serif;
     }
 
-    .h3Strong {
+    strong {
       color: #1e90ff;
       font-weight: 600;
       font-family: "Roboto", sans-serif;
@@ -118,29 +122,13 @@ export const ContainerInput = styled.div`
     }
   }
 
-  label {
-    padding-top: 12px;
-    padding-bottom: 2px;
-    font-family: "Source Sans Pro", sans-serif;
-    font-size: 14px;
-    line-height: 16px;
-    color: #656565;
-  }
-
-  p {
+  .pMaxInfo {
     padding-top: 3px;
     font-family: "Source Sans Pro", sans-serif;
     font-size: 11px;
     line-height: 13px;
 
     color: #cecece;
-  }
-
-  .pError {
-    padding-top: 3px;
-    font-family: "Roboto", sans-serif;
-    font-size: 9px;
-    color: red;
   }
 
   button {

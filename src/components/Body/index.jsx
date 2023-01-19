@@ -2,21 +2,15 @@ import { useForm } from "react-hook-form"
 import { BackBody, ContainerInput, ContainerMain } from "./style"
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schemaCalculation } from "../../validators"
-import api from "../../service";
-import { useState } from "react";
+import { useContext } from "react";
+import Label from "../Label";
+import ErrorsP from "../ErrorsP";
+import DivResult from "../DivResult";
+import { Context } from "../../Context/Context";
 
 const Body = () => {
-    const [calculation, setCalculation] = useState([]);
+    const {onSubmit} = useContext(Context)
     const {register, handleSubmit, formState: {errors}} = useForm({resolver: yupResolver(schemaCalculation)}) 
-
-    const onSubmit = (data) => {
-     api
-      .post("", { ...data })
-      .then((res) => {
-        setCalculation(res.data);
-      })
-      .catch((err) => console.log(err));
-    }
 
     return (
         <BackBody>
@@ -26,33 +20,25 @@ const Body = () => {
                 <div className="divInputs">
                     <form id="myForm" onSubmit={handleSubmit(data => onSubmit(data))}>
                         <ContainerInput>
-                            <label>Informe o valor da venda *</label>
+                            <Label text="Informe o valor da venda *"/>
                             <input id="inputAmount" type="text" placeholder="R$" name="amount" {...register("amount")}/>
-                            <p className="pError">{errors.amount?.message}</p>
+                            <ErrorsP text={errors.amount?.message}/>
 
-                            <label>Em quantas parcelas *</label>
+                            <Label text="Em quantas parcelas *"/>
                             <input id="inputInstallments" type="text" name="installments" {...register("installments")}/>
-                            <p>"Máximo de 12 parcelas"</p>
-                            <p className="pError">{errors.installments?.message}</p>
+                            <p className="pMaxInfo">"Máximo de 12 parcelas"</p>
+                            <ErrorsP text={errors.installments?.message}/>
 
-                            <label>Informe o percentual de MDR *</label>
+                            <Label text="Informe o percentual de MDR *"/>
                             <input id="inputMdr"type="text" name="mdr" {...register("mdr")}/>
-                            <p className="pError">{errors.mdr?.message}</p>
+                            <ErrorsP text={errors.mdr?.message}/>
 
                             <button type="submit"></button>
                         </ContainerInput>
                     </form>
                 </div>
             </div>
-            <div className="containterResponseFull">
-                <div className="divResponse">
-                    <h2 className="h2Response">VOCÊ RECEBERÁ:</h2>
-                    <h3 className="h3Response">Amanhã: <strong className="h3Strong">&#160; R$ {calculation['1'] ? calculation['1'] : 0},00</strong></h3>
-                    <h3 className="h3Response">Em 15 dias: <strong className="h3Strong">&#160; R$ {calculation['15'] ? calculation['15'] : 0},00</strong></h3>
-                    <h3 className="h3Response">Em 30 dias: <strong className="h3Strong">&#160; R$ {calculation['30'] ? calculation['30'] : 0},00</strong></h3>
-                    <h3 className="h3Response">Em 90 dias: <strong className="h3Strong">&#160; R$ {calculation['90'] ? calculation['90'] : 0},00</strong></h3>
-                </div>
-            </div>
+            <DivResult/>
         </ContainerMain>
         </BackBody>
     )
