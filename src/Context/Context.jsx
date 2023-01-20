@@ -5,6 +5,7 @@ export const Context = createContext()
 
 export const ContextProvider = ({children}) => {
     const [calculation, setCalculation] = useState([]);
+    const [dataResult, setDataResult] = useState([])
 
     const onSubmit = (data) => {
         api
@@ -19,7 +20,9 @@ export const ContextProvider = ({children}) => {
         <Context.Provider value={{
             calculation,
             setCalculation,
-            onSubmit
+            onSubmit,
+            setDataResult,
+            dataResult
         }}>
             {children}
         </Context.Provider>

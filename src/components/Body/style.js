@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContainerMain = styled.div`
   display: flex;
   width: 34rem;
-  height: 22rem;
+  height: 24rem;
   margin: 0 auto;
 
   border: 2px solid #dcdcdc;
@@ -11,7 +11,7 @@ export const ContainerMain = styled.div`
 
   @media screen and (max-width: 440px) {
     flex-direction: column;
-    height: 32rem;
+    height: 36rem;
     align-items: center;
     justify-content: center;
   }

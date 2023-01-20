@@ -15,7 +15,7 @@ export const Container = styled.div`
   }
 
   h2 {
-    width: 90%;
+    width: 100%;
     border-bottom: 1px solid #1e90ff;
     color: #1e90ff;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
